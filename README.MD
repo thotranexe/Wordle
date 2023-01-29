@@ -26,16 +26,16 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] hide keyboard on submit
+* [x] Keyboard will be hidden on submit
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/thotranexe/Wordle/blob/main/Walkthrough.gif' title='Video Walkthrough' width='30%' hieght='30%' alt='Video Walkthrough' />
+<img src='https://github.com/thotranexe/Wordle/blob/main/Walkthrough2.gif' title='Video Walkthrough' width='30%' hieght='30%' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with online gif converter
+GIF created with Android Studio Video Capture + Online gif converter
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -44,6 +44,8 @@ GIF created with online gif converter
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+Spannable text, Displaying each guess, and I tried adding confetti however was unsuccesful doing so
 
 ## License
 
