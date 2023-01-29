@@ -32,7 +32,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/thotranexe/Wordle/blob/main/Walkthrough.gif' title='Video Walkthrough' width='50%' hieght='50%' alt='Video Walkthrough' />
+<img src='https://github.com/thotranexe/Wordle/blob/main/Walkthrough.gif' title='Video Walkthrough' width='30%' hieght='30%' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with online gif converter
