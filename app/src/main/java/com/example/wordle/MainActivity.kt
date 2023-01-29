@@ -1,6 +1,8 @@
 package com.example.wordle
 
+import android.content.Context
 import android.graphics.Color
+import android.inputmethodservice.InputMethodService
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Spannable
@@ -12,8 +14,12 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import android.text.SpannableStringBuilder
+import android.view.inputmethod.InputMethodManager
 import androidx.core.text.bold
 import androidx.core.text.color
+import com.github.jinatonic.confetti.CommonConfetti
+import com.github.jinatonic.confetti.ConfettiView
+
 class MainActivity : AppCompatActivity() {
     var wordToGuess = FourLetterWordList.getRandomFourLetterWord()
 
@@ -32,7 +38,10 @@ class MainActivity : AppCompatActivity() {
         }
         return result
     }
-
+    fun View.hideKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -48,6 +57,7 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             //get given text
             var guess = findViewById<EditText>(R.id.editText)
+            guess.hideKeyboard()
             var text =guess.text.toString().uppercase()
             //check
             var correctness=checkGuess(text)
@@ -77,10 +87,12 @@ class MainActivity : AppCompatActivity() {
                     g1.setText("")
                     g2.setText("")
                     g3.setText("")
+                    counter.setText("Guesses Left: "+ num.toString())
                     reset.visibility=View.INVISIBLE
                     button.visibility=View.VISIBLE
                 }
             }
+            //set textviews to the word last guessed
             if(num==3){
                 g1.setText(s, TextView.BufferType.SPANNABLE)
                 num--
@@ -102,12 +114,12 @@ class MainActivity : AppCompatActivity() {
                     g1.setText("")
                     g2.setText("")
                     g3.setText("")
+                    counter.setText("Guesses Left: "+ num.toString())
                     reset.visibility=View.INVISIBLE
                     button.visibility=View.VISIBLE
                 }
             }
             counter.setText("Guesses Left: "+ num.toString())
-
         }
     }
 }
